@@ -1,0 +1,14 @@
+# history file
+HISTFILE=~/.zsh_history
+# lines stored in history file
+HISTSIZE=10000
+# commands stored in history file
+SAVEHIST=10000
+# remove old one for duplicated command history
+setopt hist_ignore_all_dups
+# ignore command same with latest
+setopt hist_ignore_dups
+# append history (never create new history file everytime)
+setopt append_history
+# append history incrementally
+setopt inc_append_history

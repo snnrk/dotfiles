@@ -1,0 +1,2 @@
+export WAKATIME_API_URL="http://meet.lab.proofas.com:3000/"
+export WAKATIME_API_KEY="9410c8a8-62ed-4dbb-9c79-63a6ddaed49b"

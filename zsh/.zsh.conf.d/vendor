@@ -1,0 +1,38 @@
+# Setup for Prezto
+zinit snippet PZT::modules/helper/init.zsh
+
+# Setup for oh-my-zsh
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git # needed
+zinit cdclear -q
+
+# Customize of prompt
+setopt promptsubst
+zinit snippet OMZT::gnzh
+zinit light agnoster/agnoster-zsh-theme
+
+# Complation
+zinit light zsh-users/zsh-autosuggestions
+
+# Syntax highlight
+zinit light zdharma/fast-syntax-highlighting
+
+# Search history of commands by ^r
+zinit light zdharma/history-search-multi-word
+
+# Setup for anyframe
+zinit light mollifier/anyframe
+
+# ^x b => show recent dirs by peco
+bindkey '^xb' anyframe-widget-cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# ^x r => show recent exec by peco
+bindkey '^xr' anyframe-widget-execute-history
+
+# ^x ^b => switch to git branch selected by peco
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+
+# ^x g => show git repo cloned by GHQ
+bindkey '^xg' anyframe-widget-cd-ghq-repository
