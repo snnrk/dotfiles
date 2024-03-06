@@ -22,4 +22,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-source $HOME/.zsh.conf.d/*
+for file in $HOME/.zsh.conf.d/*; do
+    source "$file"
+done
