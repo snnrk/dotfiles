@@ -1,0 +1,15 @@
+if type "exa" > /dev/null 2>&1; then
+    alias ls='exa'
+    alias l='exa -F'
+    alias la='exa -a'
+    alias ll='exa -l'
+else
+    alias ls='ls'
+    alias l='ls -CF'
+    alias la='ls -A'
+    alias ll='ls -l'
+fi
+
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
