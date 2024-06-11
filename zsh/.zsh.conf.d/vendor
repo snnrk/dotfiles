@@ -2,6 +2,7 @@
 zinit snippet PZT::modules/helper/init.zsh
 
 # Setup for oh-my-zsh
+zstyle ':omz:alpha:lib:git' async-prompt no
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git # needed
 zinit cdclear -q
