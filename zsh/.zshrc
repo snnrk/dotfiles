@@ -25,3 +25,5 @@ zinit light-mode for \
 for file in $HOME/.zsh.conf.d/*; do
     source "$file"
 done
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
