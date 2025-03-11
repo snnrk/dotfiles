@@ -37,3 +37,5 @@ bindkey '^x^b' anyframe-widget-checkout-git-branch
 
 # ^x g => show git repo cloned by GHQ
 bindkey '^xg' anyframe-widget-cd-ghq-repository
+
+typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
