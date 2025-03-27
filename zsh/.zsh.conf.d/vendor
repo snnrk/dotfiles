@@ -1,16 +1,16 @@
 # Setup for Prezto
-zinit snippet PZT::modules/helper/init.zsh
+# zinit snippet PZT::modules/helper/init.zsh
 
 # Setup for oh-my-zsh
-zstyle ':omz:alpha:lib:git' async-prompt no
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git # needed
-zinit cdclear -q
+# zstyle ':omz:alpha:lib:git' async-prompt no
+# zinit snippet OMZL::git.zsh
+# zinit snippet OMZP::git # needed
+# zinit cdclear -q
 
 # Customize of prompt
-setopt promptsubst
-zinit snippet OMZT::gnzh
-zinit light agnoster/agnoster-zsh-theme
+# setopt promptsubst
+# zinit snippet OMZT::gnzh
+# zinit light agnoster/agnoster-zsh-theme
 
 # Complation
 zinit light zsh-users/zsh-autosuggestions
