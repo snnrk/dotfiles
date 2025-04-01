@@ -1,15 +1,20 @@
-if type "exa" > /dev/null 2>&1; then
-    alias ls='exa'
-    alias l='exa -F'
-    alias la='exa -a'
-    alias ll='exa -l'
+if type "exa" >/dev/null 2>&1; then
+  alias ls='exa'
+  alias l='exa -F'
+  alias la='exa -a'
+  alias ll='exa -l'
+elif type "eza" >/dev/null 2>&1; then
+  alias ls='eza'
+  alias l='eza -F'
+  alias la='eza -a'
+  alias ll='eza -l'
 else
-    alias ls='ls'
-    alias l='ls -CF'
-    alias la='ls -A'
-    alias ll='ls -l'
+  alias ls='ls'
+  alias l='ls -CF'
+  alias la='ls -A'
+  alias ll='ls -l'
 fi
 
-if type "bat" > /dev/null 2>&1; then
-    alias cat="bat"
+if type "bat" >/dev/null 2>&1; then
+  alias cat="bat"
 fi

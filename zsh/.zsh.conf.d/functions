@@ -1,7 +1,42 @@
 # node-scripts
 function nsc() {
-    if [[ -f package.json ]]; then
-        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
-        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
-    fi
+  if [[ -f package.json ]]; then
+    printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
+    cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' | awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
+  fi
 }
+
+# peco settings
+# 過去に実行したコマンドを選択。ctrl-rにバインド
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+
+if type "peco" >/dev/null 2>&1; then
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
+fi
+
+# search a destination from cdr list
+function peco-get-destination-from-cdr() {
+  cdr -l |
+    sed -e 's/^[[:digit:]]*[[:blank:]]*//' |
+    peco --query "$LBUFFER"
+}
+
+### 過去に移動したことのあるディレクトリを選択。ctrl-uにバインド
+function peco-cdr() {
+  local destination="$(peco-get-destination-from-cdr)"
+  if [ -n "$destination" ]; then
+    BUFFER="cd $destination"
+    zle accept-line
+  else
+    zle reset-prompt
+  fi
+}
+if type "peco" >/dev/null 2>&1; then
+  zle -N peco-cdr
+  bindkey '^u' peco-cdr
+fi
