@@ -18,8 +18,8 @@ zinit light zsh-users/zsh-autosuggestions
 # Syntax highlight
 zinit light zdharma/fast-syntax-highlighting
 
-# Search history of commands by ^r
-zinit light zdharma/history-search-multi-word
+# # Search history of commands by ^r
+# zinit light zdharma/history-search-multi-word
 
 # Setup for anyframe
 zinit light mollifier/anyframe
@@ -38,4 +38,4 @@ bindkey '^x^b' anyframe-widget-checkout-git-branch
 # ^x g => show git repo cloned by GHQ
 bindkey '^xg' anyframe-widget-cd-ghq-repository
 
-typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
+# typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
