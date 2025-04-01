@@ -12,3 +12,5 @@ setopt hist_ignore_dups
 setopt append_history
 # append history incrementally
 setopt inc_append_history
+# prevent exit due to Ctrl-d
+setopt ignoreeof
